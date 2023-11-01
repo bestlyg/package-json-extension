@@ -9,11 +9,7 @@ const program = new Command();
 program
   .name(packageInfo.name)
   .description(packageInfo.description)
-  .version(packageInfo.version);
-
-program
-  .command("update-package-json")
-  .description("Update package json from the filed of best-tools.")
+  .version(packageInfo.version)
   .option(
     "-p --path <path>",
     "The path of package json.",
