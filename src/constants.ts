@@ -1,6 +1,6 @@
 import { resolve } from "./functions";
 
-export const PREFIX = process.env.PACKAGE_JSON_EXTEND_PREFIX ?? '[extend-package-json]';
+export const PREFIX = process.env.PACKAGE_JSON_EXTEND_PREFIX ?? 'EXTEND';
 
 export const FIELD_NAME =
   process.env.PACKAGE_JSON_EXTEND_FIELD_NAME ?? "extension";

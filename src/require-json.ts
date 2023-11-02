@@ -1,8 +1,9 @@
 import { FIELD_NAME } from "./constants";
 import _ from "lodash";
-import { error, resolve } from "./functions";
+import { resolve } from "./functions";
 import { dirname } from "path";
 import { PackageJsonExtend } from "./types";
+import { error } from "./print";
 
 function removeNullKeys(obj) {
   if (_.isArray(obj)) {

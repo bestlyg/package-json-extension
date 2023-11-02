@@ -1,7 +1,7 @@
 import { Command } from "commander";
 import { CWD, FILE_NAME_PACKAGE_JSON, packageInfo } from "./constants";
-import { error, resolve } from "./functions";
-import { print } from "./print";
+import { resolve } from "./functions";
+import { print, error } from "./print";
 import fs from "fs-extra";
 import { requireJson } from "./require-json";
 
