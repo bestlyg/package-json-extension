@@ -1,6 +1,6 @@
 {
     "name": "package-json-extension",
-    "version": "0.0.3-alpha.1",
+    "version": "0.0.3",
     "description": "Extend your package json.",
     "homepage": "https://github.com/bestlyg/package-json-extension",
     "author": "BestLyg",
@@ -30,7 +30,7 @@
     },
     "devDependencies": {
         "@types/node": "^20.8.9",
-        "package-json-extension": "^0.0.3-alpha.1",
+        "package-json-extension": "^0.0.3",
         "rimraf": "^5.0.5",
         "tslib": "^2.6.2",
         "typescript": "^5.2.2"
