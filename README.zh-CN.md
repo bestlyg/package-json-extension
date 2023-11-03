@@ -25,6 +25,9 @@ console.log(json);
 
 ### 类型定义
 ```ts
-function requireJson<R = any>(path: string): R
+interface RequireJsonOptions {
+    fieldName: string;
+}
+function requireJson<R = any>(path: string, options: RequireJsonOptions): R
 ```
 

@@ -23,7 +23,7 @@ devDependencies:
     specifier: ^20.8.9
     version: 20.8.9
   package-json-extension:
-    specifier: ^0.0.3-alpha.1
+    specifier: ^0.0.3
     version: 'link:'
   rimraf:
     specifier: ^5.0.5

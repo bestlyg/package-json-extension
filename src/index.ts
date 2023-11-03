@@ -1,1 +1,1 @@
-export { requireJson } from "./require-json";
+export { requireJson, RequireJsonOptions } from './require-json';

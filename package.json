@@ -1,6 +1,6 @@
 {
     "name": "package-json-extension",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Extend your package json.",
     "homepage": "https://github.com/bestlyg/package-json-extension",
     "author": "BestLyg",

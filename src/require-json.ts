@@ -18,7 +18,12 @@ function removeNullKeys(obj) {
     }
 }
 
-export function requireJson<R = any>(path: string): R {
+export interface RequireJsonOptions {
+    fieldName: string;
+}
+
+export function requireJson<R = any>(path: string, options?: RequireJsonOptions): R {
+    const { fieldName = FIELD_NAME } = options;
     const map: Record<string, Record<string, any>> = {};
     try {
         loadFile(path);
@@ -28,7 +33,7 @@ export function requireJson<R = any>(path: string): R {
         // console.log('vars', vars);
         // console.log('metas', metas);
         const mergedObj = _.merge({}, map[path], metas);
-        mergedObj[FIELD_NAME] = map[path][FIELD_NAME];
+        mergedObj[fieldName] = map[path][fieldName];
         return removeNullKeys(
             _.cloneDeepWith(mergedObj, value => {
                 if (_.isString(value)) {
@@ -46,14 +51,14 @@ export function requireJson<R = any>(path: string): R {
         const json = require(path);
         map[path] = json;
         pathSet.add(path);
-        for (const p of (json?.[FIELD_NAME] as PackageJsonExtend)?.extends ?? []) {
+        for (const p of (json?.[fieldName] as PackageJsonExtend)?.extends ?? []) {
             loadFile(resolve(dirname(path), p), pathSet);
         }
         pathSet.delete(path);
     }
 
     function load<K extends keyof PackageJsonExtend>(path: string, key: K) {
-        const json: PackageJsonExtend = map[path]?.[FIELD_NAME] ?? {};
+        const json: PackageJsonExtend = map[path]?.[fieldName] ?? {};
         return _.merge(
             {},
             ...(json.extends ?? []).map(p => load(resolve(dirname(path), p), key)),
