@@ -19,10 +19,10 @@ function removeNullKeys(obj) {
 }
 
 export interface RequireJsonOptions {
-    fieldName: string;
+    fieldName?: string;
 }
 
-export function requireJson<R = any>(path: string, options?: RequireJsonOptions): R {
+export function requireJson<R = any>(path: string, options: RequireJsonOptions = {}): R {
     const { fieldName = FIELD_NAME } = options;
     const map: Record<string, Record<string, any>> = {};
     try {
